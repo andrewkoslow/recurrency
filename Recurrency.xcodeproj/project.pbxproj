@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		71134D3021F87AC200D4A78F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71134D2E21F87AC200D4A78F /* LaunchScreen.storyboard */; };
+		717E205E21FFC1C5000939A4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205D21FFC1C5000939A4 /* Currency.swift */; };
 		71CD389A21F87682001CAFA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD389921F87682001CAFA1 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71134D2E21F87AC200D4A78F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71134D2F21F87AC200D4A78F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		717E205D21FFC1C5000939A4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		71CD389621F87682001CAFA1 /* Recurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CD389921F87682001CAFA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +40,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		717E205C21FFC1B4000939A4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				717E205D21FFC1C5000939A4 /* Currency.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		71CD388D21F87682001CAFA1 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				71CD389921F87682001CAFA1 /* AppDelegate.swift */,
+				717E205C21FFC1B4000939A4 /* Entities */,
 				71134D2D21F87AC200D4A78F /* Resources */,
 			);
 			path = Recurrency;
@@ -131,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				717E205E21FFC1C5000939A4 /* Currency.swift in Sources */,
 				71CD389A21F87682001CAFA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
