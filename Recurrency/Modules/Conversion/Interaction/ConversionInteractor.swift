@@ -11,3 +11,11 @@ import Foundation
 class ConversionInteractor {
     
 }
+
+extension ConversionInteractor: ConversionInteractionProtocol {
+    
+    func start() {
+        
+    }
+    
+}
