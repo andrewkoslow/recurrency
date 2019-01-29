@@ -10,4 +10,16 @@ import UIKit
 
 class ConversionViewController: UITableViewController {
     
+    private var model = ConversionViewModel(amounts: [])
+    
+}
+
+extension ConversionViewController: ConversionViewControllerProtocol {
+    
+    func update(with model: ConversionViewModel) {
+        self.model = model
+        
+        tableView.reloadData()
+    }
+    
 }
