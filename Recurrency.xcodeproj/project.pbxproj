@@ -17,6 +17,8 @@
 		717E20672200708D000939A4 /* ConversionViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E20662200708D000939A4 /* ConversionViewControllerProtocol.swift */; };
 		717E20692200710A000939A4 /* ConversionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E20682200710A000939A4 /* ConversionPresenter.swift */; };
 		717E206B22007229000939A4 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E206A22007229000939A4 /* ConversionViewController.swift */; };
+		717E206D220077B1000939A4 /* ConversionViewAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717E206C220077B1000939A4 /* ConversionViewAmountCell.xib */; };
+		717E206F220079CB000939A4 /* ConversionViewAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E206E220079CB000939A4 /* ConversionViewAmountCell.swift */; };
 		71CD389A21F87682001CAFA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD389921F87682001CAFA1 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		717E20662200708D000939A4 /* ConversionViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewControllerProtocol.swift; sourceTree = "<group>"; };
 		717E20682200710A000939A4 /* ConversionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionPresenter.swift; sourceTree = "<group>"; };
 		717E206A22007229000939A4 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
+		717E206C220077B1000939A4 /* ConversionViewAmountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConversionViewAmountCell.xib; sourceTree = "<group>"; };
+		717E206E220079CB000939A4 /* ConversionViewAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewAmountCell.swift; sourceTree = "<group>"; };
 		71CD389621F87682001CAFA1 /* Recurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CD389921F87682001CAFA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +93,8 @@
 				717E20682200710A000939A4 /* ConversionPresenter.swift */,
 				717E20662200708D000939A4 /* ConversionViewControllerProtocol.swift */,
 				717E206A22007229000939A4 /* ConversionViewController.swift */,
+				717E206C220077B1000939A4 /* ConversionViewAmountCell.xib */,
+				717E206E220079CB000939A4 /* ConversionViewAmountCell.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -195,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				717E206D220077B1000939A4 /* ConversionViewAmountCell.xib in Resources */,
 				71134D3021F87AC200D4A78F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				717E20672200708D000939A4 /* ConversionViewControllerProtocol.swift in Sources */,
+				717E206F220079CB000939A4 /* ConversionViewAmountCell.swift in Sources */,
 				717E206521FFCBBB000939A4 /* ConversionService.swift in Sources */,
 				717E205E21FFC1C5000939A4 /* Currency.swift in Sources */,
 				717E206221FFC461000939A4 /* ConversionInteractor.swift in Sources */,
