@@ -14,12 +14,50 @@ class ConversionViewController: UITableViewController {
     
 }
 
+extension ConversionViewController {
+    
+    private struct ReuseIdentifiers {
+        static let amountCell = "AmountCell"
+    }
+    
+}
+
+extension ConversionViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let amountCellNib = UINib(nibName: "ConversionViewAmountCell", bundle: nil)
+        
+        tableView.register(amountCellNib, forCellReuseIdentifier: ReuseIdentifiers.amountCell)
+    }
+    
+}
+
 extension ConversionViewController: ConversionViewControllerProtocol {
     
     func update(with model: ConversionViewModel) {
         self.model = model
         
         tableView.reloadData()
+    }
+    
+}
+
+extension ConversionViewController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return model.amounts.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let amount = model.amounts[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.amountCell, for: indexPath) as! ConversionViewAmountCell
+        cell.currency = amount.currency
+        cell.amount = amount.amount
+        
+        return cell
     }
     
 }
