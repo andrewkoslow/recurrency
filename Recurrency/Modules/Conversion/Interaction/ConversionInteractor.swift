@@ -10,12 +10,16 @@ import Foundation
 
 class ConversionInteractor {
     
+    private let presentation: ConversionPresentationProtocol
     private let service: ConversionServiceProtocol
     
     private var started = false
     private var conversion: Conversion?
+    private var currency: Currency?
+    private var amount: Decimal?
     
-    init(service: ConversionServiceProtocol) {
+    init(presentation: ConversionPresentationProtocol, service: ConversionServiceProtocol) {
+        self.presentation = presentation
         self.service = service
     }
     
@@ -32,7 +36,37 @@ extension ConversionInteractor: ConversionInteractionProtocol {
             guard let conversion = response.conversion else { return }
             
             self?.conversion = conversion
+            self?.updatePresentation()
         }
+    }
+    
+}
+
+extension ConversionInteractor {
+    
+    private func calculateAmounts() -> [Currency: Decimal] {
+        guard let conversion = conversion else { return [:] }
+        
+        var amounts: [Currency: Decimal] = [:]
+        
+        if let source = currency, let amount = amount {
+            for target in conversion.currencies {
+                amounts[target] = conversion.convert(amount: amount, from: source, to: target)
+            }
+        } else {
+            for target in conversion.currencies {
+                amounts[target] = 0
+            }
+        }
+        
+        return amounts
+    }
+    
+    private func updatePresentation() {
+        let amounts = calculateAmounts()
+        let model = ConversionPresentationModel(amounts: amounts)
+        
+        presentation.update(with: model)
     }
     
 }
