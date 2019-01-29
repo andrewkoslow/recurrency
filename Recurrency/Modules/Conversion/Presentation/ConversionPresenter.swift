@@ -17,3 +17,21 @@ class ConversionPresenter {
     }
     
 }
+
+extension ConversionPresenter: ConversionPresentationProtocol {
+    
+    func update(with presentationModel: ConversionPresentationModel) {
+        let amounts: [ConversionViewModel.Amount] = presentationModel.amounts
+            .sorted { (first, second) -> Bool in
+                return first.key.code < second.key.code
+            }
+            .map { (data) -> ConversionViewModel.Amount in
+                return ConversionViewModel.Amount(currency: data.key, amount: data.value)
+        }
+        
+        let viewModel = ConversionViewModel(amounts: amounts)
+        
+        viewController.update(with: viewModel)
+    }
+    
+}
