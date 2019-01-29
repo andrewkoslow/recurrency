@@ -16,6 +16,7 @@
 		717E206521FFCBBB000939A4 /* ConversionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E206421FFCBBB000939A4 /* ConversionService.swift */; };
 		717E20672200708D000939A4 /* ConversionViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E20662200708D000939A4 /* ConversionViewControllerProtocol.swift */; };
 		717E20692200710A000939A4 /* ConversionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E20682200710A000939A4 /* ConversionPresenter.swift */; };
+		717E206B22007229000939A4 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E206A22007229000939A4 /* ConversionViewController.swift */; };
 		71CD389A21F87682001CAFA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD389921F87682001CAFA1 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		717E206421FFCBBB000939A4 /* ConversionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionService.swift; sourceTree = "<group>"; };
 		717E20662200708D000939A4 /* ConversionViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewControllerProtocol.swift; sourceTree = "<group>"; };
 		717E20682200710A000939A4 /* ConversionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionPresenter.swift; sourceTree = "<group>"; };
+		717E206A22007229000939A4 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 		71CD389621F87682001CAFA1 /* Recurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CD389921F87682001CAFA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 				717E205821F88FE9000939A4 /* ConversionPresentationProtocol.swift */,
 				717E20682200710A000939A4 /* ConversionPresenter.swift */,
 				717E20662200708D000939A4 /* ConversionViewControllerProtocol.swift */,
+				717E206A22007229000939A4 /* ConversionViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				717E206221FFC461000939A4 /* ConversionInteractor.swift in Sources */,
 				717E206021FFC1FF000939A4 /* Conversion.swift in Sources */,
 				717E20692200710A000939A4 /* ConversionPresenter.swift in Sources */,
+				717E206B22007229000939A4 /* ConversionViewController.swift in Sources */,
 				717E205921F88FE9000939A4 /* ConversionPresentationProtocol.swift in Sources */,
 				717E205721F88FBD000939A4 /* ConversionInteractionProtocol.swift in Sources */,
 				71CD389A21F87682001CAFA1 /* AppDelegate.swift in Sources */,
