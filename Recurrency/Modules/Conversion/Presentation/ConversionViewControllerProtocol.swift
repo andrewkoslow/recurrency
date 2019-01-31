@@ -19,6 +19,12 @@ struct ConversionViewModel {
     
 }
 
+protocol ConversionViewControllerDelegate: AnyObject {
+    
+    func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmount: ConversionViewModel.Amount)
+    
+}
+
 protocol ConversionViewControllerProtocol: AnyObject {
     
     func update(with model: ConversionViewModel)
