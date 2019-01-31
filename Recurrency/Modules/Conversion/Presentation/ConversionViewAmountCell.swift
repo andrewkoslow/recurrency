@@ -24,12 +24,19 @@ class ConversionViewAmountCell: UITableViewCell {
     @IBOutlet private var currencyCodeLabel: UILabel!
     @IBOutlet private var amountTextField: UITextField!
     
+    private let amountFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        
+        return formatter
+    }()
+    
     private func updateCurrencyCodeLabel() {
         currencyCodeLabel.text = currency?.code
     }
     
     private func updateAmountTextField() {
-        amountTextField.text = String(describing: amount ?? 0)
+        amountTextField.text = amountFormatter.string(for: amount)
     }
     
 }
