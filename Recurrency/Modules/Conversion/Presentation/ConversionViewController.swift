@@ -10,6 +10,8 @@ import UIKit
 
 class ConversionViewController: UITableViewController {
     
+    weak var delegate: ConversionViewControllerDelegate?
+    
     private var model = ConversionViewModel(amounts: [])
     
 }
@@ -56,8 +58,22 @@ extension ConversionViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.amountCell, for: indexPath) as! ConversionViewAmountCell
         cell.currency = amount.currency
         cell.amount = amount.amount
+        cell.delegate = self
         
         return cell
+    }
+    
+}
+
+extension ConversionViewController: ConversionViewAmountCellDelegate {
+    
+    func amountCell(_ cell: ConversionViewAmountCell, didEnterAmount value: Decimal?) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        let currency = model.amounts[indexPath.row].currency
+        let amount = ConversionViewModel.Amount(currency: currency, amount: value)
+        
+        delegate?.conversionViewController(self, didChangeAmount: amount)
     }
     
 }
