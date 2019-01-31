@@ -42,6 +42,17 @@ extension ConversionInteractor: ConversionInteractionProtocol {
     
 }
 
+extension ConversionInteractor: ConversionPresentationDelegate {
+    
+    func conversionPresentation(_: ConversionPresentationProtocol, didChangeAmount amount: Decimal?, forCurrency currency: Currency) {
+        self.currency = currency
+        self.amount = amount
+        
+        updatePresentation()
+    }
+    
+}
+
 extension ConversionInteractor {
     
     private func calculateAmounts() -> [Currency: Decimal] {
