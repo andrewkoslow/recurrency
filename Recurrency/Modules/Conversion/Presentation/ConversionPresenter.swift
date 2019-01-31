@@ -12,6 +12,8 @@ class ConversionPresenter {
     
     private let viewController: ConversionViewControllerProtocol
     
+    weak var delegate: ConversionPresentationDelegate?
+    
     init(viewController: ConversionViewControllerProtocol) {
         self.viewController = viewController
     }
@@ -32,6 +34,14 @@ extension ConversionPresenter: ConversionPresentationProtocol {
         let viewModel = ConversionViewModel(amounts: amounts)
         
         viewController.update(with: viewModel)
+    }
+    
+}
+
+extension ConversionPresenter: ConversionViewControllerDelegate {
+    
+    func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmount amount: ConversionViewModel.Amount) {
+        delegate?.conversionPresentation(self, didChangeAmount: amount.amount, forCurrency: amount.currency)
     }
     
 }
