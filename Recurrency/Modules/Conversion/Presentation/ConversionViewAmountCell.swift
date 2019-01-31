@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol ConversionViewAmountCellDelegate: AnyObject {
+    
+    func amountCell(_: ConversionViewAmountCell, didEnterAmount: Decimal?)
+    
+}
+
 class ConversionViewAmountCell: UITableViewCell {
+    
+    weak var delegate: ConversionViewAmountCellDelegate?
     
     var currency: Currency? {
         didSet {
@@ -37,6 +45,16 @@ class ConversionViewAmountCell: UITableViewCell {
     
     private func updateAmountTextField() {
         amountTextField.text = amountFormatter.string(for: amount)
+    }
+    
+    @IBAction private func amountTextFieldDidChangeValue() {
+        var amount: Decimal?
+        
+        if let text = amountTextField.text, let decimal = amountFormatter.number(from: text)?.decimalValue, decimal.isFinite == true {
+            amount = decimal
+        }
+        
+        delegate?.amountCell(self, didEnterAmount: amount)
     }
     
 }
