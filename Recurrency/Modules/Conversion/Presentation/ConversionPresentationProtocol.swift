@@ -14,6 +14,12 @@ struct ConversionPresentationModel {
     
 }
 
+protocol ConversionPresentationDelegate: AnyObject {
+    
+    func conversionPresentation(_: ConversionPresentationProtocol, didChangeAmount: Decimal?, forCurrency: Currency)
+    
+}
+
 protocol ConversionPresentationProtocol: AnyObject {
     
     func update(with model: ConversionPresentationModel)
