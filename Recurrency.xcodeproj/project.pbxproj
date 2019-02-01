@@ -19,6 +19,7 @@
 		717E206B22007229000939A4 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E206A22007229000939A4 /* ConversionViewController.swift */; };
 		717E206D220077B1000939A4 /* ConversionViewAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717E206C220077B1000939A4 /* ConversionViewAmountCell.xib */; };
 		717E206F220079CB000939A4 /* ConversionViewAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E206E220079CB000939A4 /* ConversionViewAmountCell.swift */; };
+		717E207322050C70000939A4 /* RowUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E207222050C70000939A4 /* RowUpdates.swift */; };
 		71CD389A21F87682001CAFA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD389921F87682001CAFA1 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		717E206A22007229000939A4 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 		717E206C220077B1000939A4 /* ConversionViewAmountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConversionViewAmountCell.xib; sourceTree = "<group>"; };
 		717E206E220079CB000939A4 /* ConversionViewAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewAmountCell.swift; sourceTree = "<group>"; };
+		717E207222050C70000939A4 /* RowUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowUpdates.swift; sourceTree = "<group>"; };
 		71CD389621F87682001CAFA1 /* Recurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CD389921F87682001CAFA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,22 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		717E207022050ACB000939A4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				717E207122050B69000939A4 /* Helpers */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		717E207122050B69000939A4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				717E207222050C70000939A4 /* RowUpdates.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		71CD388D21F87682001CAFA1 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +156,7 @@
 				71CD389921F87682001CAFA1 /* AppDelegate.swift */,
 				717E205C21FFC1B4000939A4 /* Entities */,
 				717E206321FFCB90000939A4 /* Services */,
+				717E207022050ACB000939A4 /* Presentation */,
 				717E204C21F88DEF000939A4 /* Modules */,
 				71134D2D21F87AC200D4A78F /* Resources */,
 			);
@@ -218,6 +237,7 @@
 				717E206521FFCBBB000939A4 /* ConversionService.swift in Sources */,
 				717E205E21FFC1C5000939A4 /* Currency.swift in Sources */,
 				717E206221FFC461000939A4 /* ConversionInteractor.swift in Sources */,
+				717E207322050C70000939A4 /* RowUpdates.swift in Sources */,
 				717E206021FFC1FF000939A4 /* Conversion.swift in Sources */,
 				717E20692200710A000939A4 /* ConversionPresenter.swift in Sources */,
 				717E206B22007229000939A4 /* ConversionViewController.swift in Sources */,
