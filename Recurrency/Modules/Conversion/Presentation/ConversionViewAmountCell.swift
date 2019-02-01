@@ -44,7 +44,22 @@ class ConversionViewAmountCell: UITableViewCell {
     }
     
     private func updateAmountTextField() {
+        guard amountTextField.isFirstResponder == false else { return }
+        
         amountTextField.text = amountFormatter.string(for: amount)
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        amountTextField.isUserInteractionEnabled = isSelected
+        updateAmountTextField()
+        
+        if isSelected {
+            amountTextField.becomeFirstResponder()
+        } else {
+            amountTextField.resignFirstResponder()
+        }
     }
     
     @IBAction private func amountTextFieldDidChangeValue() {
