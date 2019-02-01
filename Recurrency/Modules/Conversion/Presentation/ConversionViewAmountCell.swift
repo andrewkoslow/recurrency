@@ -32,9 +32,29 @@ class ConversionViewAmountCell: UITableViewCell {
     @IBOutlet private var currencyCodeLabel: UILabel!
     @IBOutlet private var amountTextField: UITextField!
     
-    private let amountFormatter: NumberFormatter = {
+    private let amountPresentationFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
+        
+        return formatter
+    }()
+    
+    private let amountEditingFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.usesGroupingSeparator = false
+        formatter.zeroSymbol = ""
+        formatter.nilSymbol = ""
+        formatter.notANumberSymbol = ""
+        
+        return formatter
+    }()
+    
+    private let amountParsingFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.isPartialStringValidationEnabled = true
+        formatter.isLenient = true
         
         return formatter
     }()
@@ -46,7 +66,9 @@ class ConversionViewAmountCell: UITableViewCell {
     private func updateAmountTextField() {
         guard amountTextField.isFirstResponder == false else { return }
         
-        amountTextField.text = amountFormatter.string(for: amount)
+        let formatter = isSelected ? amountEditingFormatter : amountPresentationFormatter
+        
+        amountTextField.text = formatter.string(for: amount)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -65,7 +87,7 @@ class ConversionViewAmountCell: UITableViewCell {
     @IBAction private func amountTextFieldDidChangeValue() {
         var amount: Decimal?
         
-        if let text = amountTextField.text, let decimal = amountFormatter.number(from: text)?.decimalValue, decimal.isFinite == true {
+        if let text = amountTextField.text, let decimal = amountParsingFormatter.number(from: text)?.decimalValue, decimal.isFinite == true {
             amount = decimal
         }
         
