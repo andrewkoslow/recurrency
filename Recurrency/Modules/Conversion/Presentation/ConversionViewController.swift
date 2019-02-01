@@ -39,26 +39,55 @@ extension ConversionViewController {
 extension ConversionViewController: ConversionViewControllerProtocol {
     
     func update(with model: ConversionViewModel) {
+        let oldModel = self.model
+        
         self.model = model
         
-        tableView.reloadData()
+        updateTableView(from: oldModel)
     }
     
 }
 
 extension ConversionViewController {
     
+    private func updateTableView(from oldModel: ConversionViewModel) {
+        let oldValues = oldModel.amounts.map { $0.currency.code }
+        let newValues = model.amounts.map { $0.currency.code }
+        let updates = RowUpdates(oldValues: oldValues, newValues: newValues)
+        
+        tableView.performBatchUpdates({
+            tableView.deleteRows(at: updates.deleteRowIndexPaths, with: .automatic)
+            tableView.insertRows(at: updates.insertRowIndexPaths, with: .automatic)
+            
+            updates.moveRowIndexPaths.forEach({ (move) in
+                tableView.moveRow(at: move.from, to: move.to)
+            })
+            
+        })
+        
+        tableView.indexPathsForVisibleRows?.forEach({ (indexPath) in
+            guard let cell = tableView.cellForRow(at: indexPath) as? ConversionViewAmountCell else { return }
+            
+            update(amountCell: cell, at: indexPath)
+        })
+    }
+    
+    private func update(amountCell cell: ConversionViewAmountCell, at indexPath: IndexPath) {
+        let amount = model.amounts[indexPath.row]
+        
+        cell.currency = amount.currency
+        cell.amount = amount.amount
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.amounts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let amount = model.amounts[indexPath.row]
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.amountCell, for: indexPath) as! ConversionViewAmountCell
-        cell.currency = amount.currency
-        cell.amount = amount.amount
         cell.delegate = self
+        
+        update(amountCell: cell, at: indexPath)
         
         return cell
     }
