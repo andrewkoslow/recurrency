@@ -16,6 +16,7 @@ struct ConversionViewModel {
 
 protocol ConversionViewControllerDelegate: AnyObject {
     
+    func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmountCurrency: Currency)
     func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmountValue: Decimal?)
     
 }

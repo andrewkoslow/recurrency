@@ -84,6 +84,12 @@ extension ConversionViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currency = model.amounts[indexPath.row].currency
+        
+        delegate?.conversionViewController(self, didChangeAmountCurrency: currency)
+    }
+    
 }
 
 extension ConversionViewController: ConversionViewAmountCellDelegate {
