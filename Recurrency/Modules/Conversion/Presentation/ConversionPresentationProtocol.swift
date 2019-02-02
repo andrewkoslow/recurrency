@@ -10,13 +10,13 @@ import Foundation
 
 struct ConversionPresentationModel {
     
-    let amounts: [Currency: Decimal]
+    let amounts: [Amount]
     
 }
 
 protocol ConversionPresentationDelegate: AnyObject {
     
-    func conversionPresentation(_: ConversionPresentationProtocol, didChangeAmount: Decimal?, forCurrency: Currency)
+    func conversionPresentation(_: ConversionPresentationProtocol, didChangeAmountValue: Decimal?)
     
 }
 

@@ -68,15 +68,8 @@ extension ConversionViewController {
         tableView.indexPathsForVisibleRows?.forEach({ (indexPath) in
             guard let cell = tableView.cellForRow(at: indexPath) as? ConversionViewAmountCell else { return }
             
-            update(amountCell: cell, at: indexPath)
+            cell.amount = model.amounts[indexPath.row]
         })
-    }
-    
-    private func update(amountCell cell: ConversionViewAmountCell, at indexPath: IndexPath) {
-        let amount = model.amounts[indexPath.row]
-        
-        cell.currency = amount.currency
-        cell.amount = amount.amount
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,8 +79,7 @@ extension ConversionViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.amountCell, for: indexPath) as! ConversionViewAmountCell
         cell.delegate = self
-        
-        update(amountCell: cell, at: indexPath)
+        cell.amount = model.amounts[indexPath.row]
         
         return cell
     }
@@ -96,13 +88,8 @@ extension ConversionViewController {
 
 extension ConversionViewController: ConversionViewAmountCellDelegate {
     
-    func amountCell(_ cell: ConversionViewAmountCell, didEnterAmount value: Decimal?) {
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-        
-        let currency = model.amounts[indexPath.row].currency
-        let amount = ConversionViewModel.Amount(currency: currency, amount: value)
-        
-        delegate?.conversionViewController(self, didChangeAmount: amount)
+    func amountCell(_ cell: ConversionViewAmountCell, didChangeAmountValue value: Decimal?) {
+        delegate?.conversionViewController(self, didChangeAmountValue: value)
     }
     
 }

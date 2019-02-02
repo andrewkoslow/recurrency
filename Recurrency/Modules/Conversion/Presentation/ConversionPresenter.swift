@@ -23,12 +23,8 @@ class ConversionPresenter {
 extension ConversionPresenter: ConversionPresentationProtocol {
     
     func update(with presentationModel: ConversionPresentationModel) {
-        let amounts: [ConversionViewModel.Amount] = presentationModel.amounts
-            .sorted { (first, second) -> Bool in
-                return first.key.code < second.key.code
-            }
-            .map { (data) -> ConversionViewModel.Amount in
-                return ConversionViewModel.Amount(currency: data.key, amount: data.value)
+        let amounts: [Amount] = presentationModel.amounts.sorted { (first, second) -> Bool in
+            return first.currency.code < second.currency.code
         }
         
         let viewModel = ConversionViewModel(amounts: amounts)
@@ -40,8 +36,8 @@ extension ConversionPresenter: ConversionPresentationProtocol {
 
 extension ConversionPresenter: ConversionViewControllerDelegate {
     
-    func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmount amount: ConversionViewModel.Amount) {
-        delegate?.conversionPresentation(self, didChangeAmount: amount.amount, forCurrency: amount.currency)
+    func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmountValue value: Decimal?) {
+        delegate?.conversionPresentation(self, didChangeAmountValue: value)
     }
     
 }

@@ -10,18 +10,13 @@ import Foundation
 
 struct ConversionViewModel {
     
-    struct Amount {
-        let currency: Currency
-        let amount: Decimal?
-    }
-    
     let amounts: [Amount]
     
 }
 
 protocol ConversionViewControllerDelegate: AnyObject {
     
-    func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmount: ConversionViewModel.Amount)
+    func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmountValue: Decimal?)
     
 }
 

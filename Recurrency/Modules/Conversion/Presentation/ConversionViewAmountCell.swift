@@ -10,7 +10,7 @@ import UIKit
 
 protocol ConversionViewAmountCellDelegate: AnyObject {
     
-    func amountCell(_: ConversionViewAmountCell, didEnterAmount: Decimal?)
+    func amountCell(_: ConversionViewAmountCell, didChangeAmountValue: Decimal?)
     
 }
 
@@ -18,13 +18,9 @@ class ConversionViewAmountCell: UITableViewCell {
     
     weak var delegate: ConversionViewAmountCellDelegate?
     
-    var currency: Currency? {
+    var amount: Amount? {
         didSet {
             updateCurrencyCodeLabel()
-        }
-    }
-    var amount: Decimal? {
-        didSet {
             updateAmountTextField()
         }
     }
@@ -60,7 +56,7 @@ class ConversionViewAmountCell: UITableViewCell {
     }()
     
     private func updateCurrencyCodeLabel() {
-        currencyCodeLabel.text = currency?.code
+        currencyCodeLabel.text = amount?.currency.code
     }
     
     private func updateAmountTextField() {
@@ -68,7 +64,7 @@ class ConversionViewAmountCell: UITableViewCell {
         
         let formatter = isSelected ? amountEditingFormatter : amountPresentationFormatter
         
-        amountTextField.text = formatter.string(for: amount)
+        amountTextField.text = formatter.string(for: amount?.value)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -85,13 +81,13 @@ class ConversionViewAmountCell: UITableViewCell {
     }
     
     @IBAction private func amountTextFieldDidChangeValue() {
-        var amount: Decimal?
+        var value: Decimal?
         
         if let text = amountTextField.text, let decimal = amountParsingFormatter.number(from: text)?.decimalValue, decimal.isFinite == true {
-            amount = decimal
+            value = decimal
         }
         
-        delegate?.amountCell(self, didEnterAmount: amount)
+        delegate?.amountCell(self, didChangeAmountValue: value)
     }
     
 }

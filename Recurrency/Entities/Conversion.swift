@@ -31,11 +31,16 @@ struct Conversion {
         self.rates = rates
     }
     
-    func convert(amount: Decimal, from source: Currency, to target: Currency) -> Decimal? {
-        guard let denominator = rates[source] else { return nil }
-        guard let multiplicator = rates[target] else { return nil }
+    func convert(amount: Amount, to target: Currency) -> Amount {
+        var convertedAmount = Amount(currency: target, value: nil)
         
-        return multiplicator / denominator * amount
+        guard let denominator = rates[amount.currency] else { return convertedAmount }
+        guard let multiplicator = rates[target] else { return convertedAmount }
+        guard let value = amount.value else { return convertedAmount }
+        
+        convertedAmount.value = multiplicator / denominator * value
+        
+        return convertedAmount
     }
     
 }

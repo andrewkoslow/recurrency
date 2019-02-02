@@ -15,8 +15,7 @@ class ConversionInteractor {
     
     private var started = false
     private var conversion: Conversion?
-    private var currency: Currency?
-    private var amount: Decimal?
+    private var amount: Amount?
     
     init(presentation: ConversionPresentationProtocol, service: ConversionServiceProtocol) {
         self.presentation = presentation
@@ -44,9 +43,8 @@ extension ConversionInteractor: ConversionInteractionProtocol {
 
 extension ConversionInteractor: ConversionPresentationDelegate {
     
-    func conversionPresentation(_: ConversionPresentationProtocol, didChangeAmount amount: Decimal?, forCurrency currency: Currency) {
-        self.currency = currency
-        self.amount = amount
+    func conversionPresentation(_: ConversionPresentationProtocol, didChangeAmountValue value: Decimal?) {
+        amount?.value = value
         
         updatePresentation()
     }
@@ -55,22 +53,14 @@ extension ConversionInteractor: ConversionPresentationDelegate {
 
 extension ConversionInteractor {
     
-    private func calculateAmounts() -> [Currency: Decimal] {
-        guard let conversion = conversion else { return [:] }
+    private func calculateAmounts() -> [Amount] {
+        guard let conversion = conversion else { return [] }
         
-        var amounts: [Currency: Decimal] = [:]
-        
-        if let source = currency, let amount = amount {
-            for target in conversion.currencies {
-                amounts[target] = conversion.convert(amount: amount, from: source, to: target)
-            }
+        if let amount = amount {
+            return conversion.currencies.map { conversion.convert(amount: amount, to: $0) }
         } else {
-            for target in conversion.currencies {
-                amounts[target] = 0
-            }
+            return conversion.currencies.map { Amount(currency: $0, value: nil) }
         }
-        
-        return amounts
     }
     
     private func updatePresentation() {
