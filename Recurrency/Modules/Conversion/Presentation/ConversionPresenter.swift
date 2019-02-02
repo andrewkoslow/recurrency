@@ -36,8 +36,8 @@ extension ConversionPresenter: ConversionPresentationProtocol {
 
 extension ConversionPresenter: ConversionViewControllerDelegate {
     
-    func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmountCurrency: Currency) {
-        
+    func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmountCurrency currency: Currency) {
+        delegate?.conversionPresentation(self, didChangeAmountCurrency: currency)
     }
     
     func conversionViewController(_: ConversionViewControllerProtocol, didChangeAmountValue value: Decimal?) {

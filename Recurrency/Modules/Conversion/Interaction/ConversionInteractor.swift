@@ -43,6 +43,10 @@ extension ConversionInteractor: ConversionInteractionProtocol {
 
 extension ConversionInteractor: ConversionPresentationDelegate {
     
+    func conversionPresentation(_: ConversionPresentationProtocol, didChangeAmountCurrency: Currency) {
+        
+    }
+    
     func conversionPresentation(_: ConversionPresentationProtocol, didChangeAmountValue value: Decimal?) {
         amount?.value = value
         
