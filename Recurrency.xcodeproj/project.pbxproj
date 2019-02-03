@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		71134D3021F87AC200D4A78F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71134D2E21F87AC200D4A78F /* LaunchScreen.storyboard */; };
 		71566111220716B3006FF409 /* ConversionInteractorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71566110220716B3006FF409 /* ConversionInteractorBuilder.swift */; };
+		715661262207287F006FF409 /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715661252207287F006FF409 /* CurrencyTests.swift */; };
 		717E205721F88FBD000939A4 /* ConversionInteractionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205621F88FBD000939A4 /* ConversionInteractionProtocol.swift */; };
 		717E205921F88FE9000939A4 /* ConversionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205821F88FE9000939A4 /* ConversionPresentationProtocol.swift */; };
 		717E205E21FFC1C5000939A4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205D21FFC1C5000939A4 /* Currency.swift */; };
@@ -42,6 +43,7 @@
 		71566110220716B3006FF409 /* ConversionInteractorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionInteractorBuilder.swift; sourceTree = "<group>"; };
 		7156611622072615006FF409 /* RecurrencyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecurrencyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71566121220726F2006FF409 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		715661252207287F006FF409 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		717E205621F88FBD000939A4 /* ConversionInteractionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionInteractionProtocol.swift; sourceTree = "<group>"; };
 		717E205821F88FE9000939A4 /* ConversionPresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionPresentationProtocol.swift; sourceTree = "<group>"; };
 		717E205D21FFC1C5000939A4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		7156611722072615006FF409 /* RecurrencyTests */ = {
 			isa = PBXGroup;
 			children = (
+				715661242207284A006FF409 /* Entities */,
 				71566120220726F2006FF409 /* Resources */,
 			);
 			path = RecurrencyTests;
@@ -109,6 +112,14 @@
 				71566121220726F2006FF409 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		715661242207284A006FF409 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				715661252207287F006FF409 /* CurrencyTests.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		717E204C21F88DEF000939A4 /* Modules */ = {
@@ -275,6 +286,7 @@
 				TargetAttributes = {
 					7156611522072615006FF409 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 71CD389521F87682001CAFA1;
 					};
 					71CD389521F87682001CAFA1 = {
@@ -324,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				715661262207287F006FF409 /* CurrencyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +377,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecurrencyTests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -373,6 +387,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.andrewkoslow.recurrency-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recurrency.app/Recurrency";
@@ -383,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RecurrencyTests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
