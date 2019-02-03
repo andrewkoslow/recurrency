@@ -24,6 +24,9 @@ extension ConversionPresenter: ConversionPresentationProtocol {
     
     func update(with presentationModel: ConversionPresentationModel) {
         let amounts: [Amount] = presentationModel.amounts.sorted { (first, second) -> Bool in
+            if first.currency.code == presentationModel.base?.code { return true }
+            else if second.currency.code == presentationModel.base?.code { return false }
+            
             return first.currency.code < second.currency.code
         }
         
