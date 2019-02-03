@@ -32,6 +32,11 @@ extension ConversionViewController {
         let amountCellNib = UINib(nibName: "ConversionViewAmountCell", bundle: nil)
         
         tableView.register(amountCellNib, forCellReuseIdentifier: ReuseIdentifiers.amountCell)
+        
+        tableView.allowsSelection = true
+        tableView.allowsMultipleSelection = false
+        tableView.keyboardDismissMode = .onDrag
+        tableView.rowHeight = 44
     }
     
 }
@@ -72,7 +77,6 @@ extension ConversionViewController {
             updates.moveRowIndexPaths.forEach({ (move) in
                 tableView.moveRow(at: move.from, to: move.to)
             })
-            
         })
         
         tableView.indexPathsForVisibleRows?.forEach({ (indexPath) in
@@ -98,6 +102,20 @@ extension ConversionViewController {
         let currency = model.amounts[indexPath.row].currency
         
         delegate?.conversionPresentation(self, didChangeAmountCurrency: currency)
+        
+        tableView.scrollToNearestSelectedRow(at: .top, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        var result: IndexPath? = indexPath
+        
+        if tableView.indexPathForSelectedRow == indexPath {
+            tableView.deselectRow(at: indexPath, animated: false)
+            
+            result = nil
+        }
+        
+        return result
     }
     
 }
