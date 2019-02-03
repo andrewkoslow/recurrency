@@ -10,9 +10,9 @@ import UIKit
 
 class ConversionViewController: UITableViewController {
     
-    weak var delegate: ConversionViewControllerDelegate?
+    weak var delegate: ConversionPresentationDelegate?
     
-    private var model = ConversionViewModel(amounts: [])
+    private var model = ConversionPresentationModel(base: nil, amounts: [])
     
 }
 
@@ -36,10 +36,20 @@ extension ConversionViewController {
     
 }
 
-extension ConversionViewController: ConversionViewControllerProtocol {
+extension ConversionViewController: ConversionPresentationProtocol {
     
-    func update(with model: ConversionViewModel) {
+    func update(with model: ConversionPresentationModel) {
         let oldModel = self.model
+        
+        var model = model
+        let base = model.base
+        
+        model.amounts.sort { (first, second) -> Bool in
+            if first.currency.code == base?.code { return true }
+            else if second.currency.code == base?.code { return false }
+            
+            return first.currency.code < second.currency.code
+        }
         
         self.model = model
         
@@ -50,7 +60,7 @@ extension ConversionViewController: ConversionViewControllerProtocol {
 
 extension ConversionViewController {
     
-    private func updateTableView(from oldModel: ConversionViewModel) {
+    private func updateTableView(from oldModel: ConversionPresentationModel) {
         let oldValues = oldModel.amounts.map { $0.currency.code }
         let newValues = model.amounts.map { $0.currency.code }
         let updates = RowUpdates(oldValues: oldValues, newValues: newValues)
@@ -87,7 +97,7 @@ extension ConversionViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currency = model.amounts[indexPath.row].currency
         
-        delegate?.conversionViewController(self, didChangeAmountCurrency: currency)
+        delegate?.conversionPresentation(self, didChangeAmountCurrency: currency)
     }
     
 }
@@ -95,7 +105,7 @@ extension ConversionViewController {
 extension ConversionViewController: ConversionViewAmountCellDelegate {
     
     func amountCell(_ cell: ConversionViewAmountCell, didChangeAmountValue value: Decimal?) {
-        delegate?.conversionViewController(self, didChangeAmountValue: value)
+        delegate?.conversionPresentation(self, didChangeAmountValue: value)
     }
     
 }
