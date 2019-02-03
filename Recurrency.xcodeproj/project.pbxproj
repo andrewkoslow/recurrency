@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71134D3021F87AC200D4A78F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71134D2E21F87AC200D4A78F /* LaunchScreen.storyboard */; };
+		71566111220716B3006FF409 /* ConversionInteractorBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71566110220716B3006FF409 /* ConversionInteractorBuilder.swift */; };
 		717E205721F88FBD000939A4 /* ConversionInteractionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205621F88FBD000939A4 /* ConversionInteractionProtocol.swift */; };
 		717E205921F88FE9000939A4 /* ConversionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205821F88FE9000939A4 /* ConversionPresentationProtocol.swift */; };
 		717E205E21FFC1C5000939A4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205D21FFC1C5000939A4 /* Currency.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		71134D2E21F87AC200D4A78F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71134D2F21F87AC200D4A78F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71566110220716B3006FF409 /* ConversionInteractorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionInteractorBuilder.swift; sourceTree = "<group>"; };
 		717E205621F88FBD000939A4 /* ConversionInteractionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionInteractionProtocol.swift; sourceTree = "<group>"; };
 		717E205821F88FE9000939A4 /* ConversionPresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionPresentationProtocol.swift; sourceTree = "<group>"; };
 		717E205D21FFC1C5000939A4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 				71134D2F21F87AC200D4A78F /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7156610F22071659006FF409 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				71566110220716B3006FF409 /* ConversionInteractorBuilder.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		717E204C21F88DEF000939A4 /* Modules */ = {
@@ -168,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				71CD389921F87682001CAFA1 /* AppDelegate.swift */,
+				7156610F22071659006FF409 /* Assembly */,
 				717E205C21FFC1B4000939A4 /* Entities */,
 				717E206321FFCB90000939A4 /* Services */,
 				717E207022050ACB000939A4 /* Presentation */,
@@ -247,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				717E20752205DA21000939A4 /* Amount.swift in Sources */,
+				71566111220716B3006FF409 /* ConversionInteractorBuilder.swift in Sources */,
 				717E206F220079CB000939A4 /* ConversionViewAmountCell.swift in Sources */,
 				717E206521FFCBBB000939A4 /* ConversionService.swift in Sources */,
 				717E205E21FFC1C5000939A4 /* Currency.swift in Sources */,
