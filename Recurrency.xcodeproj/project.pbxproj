@@ -20,6 +20,7 @@
 		717E207322050C70000939A4 /* RowUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E207222050C70000939A4 /* RowUpdates.swift */; };
 		717E20752205DA21000939A4 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E20742205DA21000939A4 /* Amount.swift */; };
 		718EB9FE22068D7900661BE2 /* ConversionResponse+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718EB9FD22068D7900661BE2 /* ConversionResponse+Decodable.swift */; };
+		718EBA0022068DB600661BE2 /* ConversionWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718EB9FF22068DB600661BE2 /* ConversionWebService.swift */; };
 		71CD389A21F87682001CAFA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD389921F87682001CAFA1 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		717E207222050C70000939A4 /* RowUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowUpdates.swift; sourceTree = "<group>"; };
 		717E20742205DA21000939A4 /* Amount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
 		718EB9FD22068D7900661BE2 /* ConversionResponse+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConversionResponse+Decodable.swift"; sourceTree = "<group>"; };
+		718EB9FF22068DB600661BE2 /* ConversionWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionWebService.swift; sourceTree = "<group>"; };
 		71CD389621F87682001CAFA1 /* Recurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CD389921F87682001CAFA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 			children = (
 				717E206421FFCBBB000939A4 /* ConversionService.swift */,
 				718EB9FD22068D7900661BE2 /* ConversionResponse+Decodable.swift */,
+				718EB9FF22068DB600661BE2 /* ConversionWebService.swift */,
 			);
 			path = Conversion;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				717E206221FFC461000939A4 /* ConversionInteractor.swift in Sources */,
 				717E207322050C70000939A4 /* RowUpdates.swift in Sources */,
 				717E206021FFC1FF000939A4 /* Conversion.swift in Sources */,
+				718EBA0022068DB600661BE2 /* ConversionWebService.swift in Sources */,
 				717E206B22007229000939A4 /* ConversionViewController.swift in Sources */,
 				717E205921F88FE9000939A4 /* ConversionPresentationProtocol.swift in Sources */,
 				717E205721F88FBD000939A4 /* ConversionInteractionProtocol.swift in Sources */,
