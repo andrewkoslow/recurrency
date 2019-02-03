@@ -26,10 +26,22 @@
 		71CD389A21F87682001CAFA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD389921F87682001CAFA1 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7156611B22072615006FF409 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71CD388E21F87682001CAFA1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71CD389521F87682001CAFA1;
+			remoteInfo = Recurrency;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		71134D2E21F87AC200D4A78F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71134D2F21F87AC200D4A78F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71566110220716B3006FF409 /* ConversionInteractorBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionInteractorBuilder.swift; sourceTree = "<group>"; };
+		7156611622072615006FF409 /* RecurrencyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecurrencyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71566121220726F2006FF409 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		717E205621F88FBD000939A4 /* ConversionInteractionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionInteractionProtocol.swift; sourceTree = "<group>"; };
 		717E205821F88FE9000939A4 /* ConversionPresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionPresentationProtocol.swift; sourceTree = "<group>"; };
 		717E205D21FFC1C5000939A4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -49,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7156611322072615006FF409 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71CD389321F87682001CAFA1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,6 +93,22 @@
 				71566110220716B3006FF409 /* ConversionInteractorBuilder.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		7156611722072615006FF409 /* RecurrencyTests */ = {
+			isa = PBXGroup;
+			children = (
+				71566120220726F2006FF409 /* Resources */,
+			);
+			path = RecurrencyTests;
+			sourceTree = "<group>";
+		};
+		71566120220726F2006FF409 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				71566121220726F2006FF409 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		717E204C21F88DEF000939A4 /* Modules */ = {
@@ -162,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				71CD389821F87682001CAFA1 /* Recurrency */,
+				7156611722072615006FF409 /* RecurrencyTests */,
 				71CD389721F87682001CAFA1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				71CD389621F87682001CAFA1 /* Recurrency.app */,
+				7156611622072615006FF409 /* RecurrencyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +228,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7156611522072615006FF409 /* RecurrencyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7156611D22072615006FF409 /* Build configuration list for PBXNativeTarget "RecurrencyTests" */;
+			buildPhases = (
+				7156611222072615006FF409 /* Sources */,
+				7156611322072615006FF409 /* Frameworks */,
+				7156611422072615006FF409 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7156611C22072615006FF409 /* PBXTargetDependency */,
+			);
+			name = RecurrencyTests;
+			productName = RecurrencyTests;
+			productReference = 7156611622072615006FF409 /* RecurrencyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		71CD389521F87682001CAFA1 /* Recurrency */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71CD38A821F87683001CAFA1 /* Build configuration list for PBXNativeTarget "Recurrency" */;
@@ -218,6 +273,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Andrew Koslow";
 				TargetAttributes = {
+					7156611522072615006FF409 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 71CD389521F87682001CAFA1;
+					};
 					71CD389521F87682001CAFA1 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -236,11 +295,19 @@
 			projectRoot = "";
 			targets = (
 				71CD389521F87682001CAFA1 /* Recurrency */,
+				7156611522072615006FF409 /* RecurrencyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7156611422072615006FF409 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71CD389421F87682001CAFA1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +320,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7156611222072615006FF409 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71CD389221F87682001CAFA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,7 +351,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7156611C22072615006FF409 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71CD389521F87682001CAFA1 /* Recurrency */;
+			targetProxy = 7156611B22072615006FF409 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		7156611E22072615006FF409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RecurrencyTests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.andrewkoslow.recurrency-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recurrency.app/Recurrency";
+			};
+			name = Debug;
+		};
+		7156611F22072615006FF409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RecurrencyTests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.andrewkoslow.recurrency-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recurrency.app/Recurrency";
+			};
+			name = Release;
+		};
 		71CD38A621F87683001CAFA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -431,6 +551,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7156611D22072615006FF409 /* Build configuration list for PBXNativeTarget "RecurrencyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7156611E22072615006FF409 /* Debug */,
+				7156611F22072615006FF409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		71CD389121F87682001CAFA1 /* Build configuration list for PBXProject "Recurrency" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
