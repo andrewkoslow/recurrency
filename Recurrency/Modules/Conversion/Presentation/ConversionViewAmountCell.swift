@@ -11,6 +11,7 @@ import UIKit
 protocol ConversionViewAmountCellDelegate: AnyObject {
     
     func amountCell(_: ConversionViewAmountCell, didChangeAmountValue: Decimal?)
+    func amountCellDidEndEditingAmountValue(_: ConversionViewAmountCell)
     
 }
 
@@ -88,6 +89,10 @@ class ConversionViewAmountCell: UITableViewCell {
         }
         
         delegate?.amountCell(self, didChangeAmountValue: value)
+    }
+    
+    @IBAction private func amountTextFieldDidEndEditing() {
+        delegate?.amountCellDidEndEditingAmountValue(self)
     }
     
 }

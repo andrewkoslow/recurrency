@@ -34,6 +34,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
                                     <action selector="amountTextFieldDidChangeValue" destination="8hG-WA-oxc" eventType="editingChanged" id="2r4-GG-SPo"/>
+                                    <action selector="amountTextFieldDidEndEditing" destination="8hG-WA-oxc" eventType="editingDidEnd" id="0YF-OJ-fe8"/>
                                 </connections>
                             </textField>
                         </subviews>

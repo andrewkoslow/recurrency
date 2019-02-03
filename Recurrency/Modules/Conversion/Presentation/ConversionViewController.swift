@@ -71,8 +71,8 @@ extension ConversionViewController {
         let updates = RowUpdates(oldValues: oldValues, newValues: newValues)
         
         tableView.performBatchUpdates({
-            tableView.deleteRows(at: updates.deleteRowIndexPaths, with: .automatic)
-            tableView.insertRows(at: updates.insertRowIndexPaths, with: .automatic)
+            tableView.deleteRows(at: updates.deleteRowIndexPaths, with: .fade)
+            tableView.insertRows(at: updates.insertRowIndexPaths, with: .fade)
             
             updates.moveRowIndexPaths.forEach({ (move) in
                 tableView.moveRow(at: move.from, to: move.to)
@@ -124,6 +124,12 @@ extension ConversionViewController: ConversionViewAmountCellDelegate {
     
     func amountCell(_ cell: ConversionViewAmountCell, didChangeAmountValue value: Decimal?) {
         delegate?.conversionPresentation(self, didChangeAmountValue: value)
+    }
+    
+    func amountCellDidEndEditingAmountValue(_: ConversionViewAmountCell) {
+        guard let indexPathForSelectedRow = tableView.indexPathForSelectedRow else { return }
+        
+        tableView.deselectRow(at: indexPathForSelectedRow, animated: false)
     }
     
 }
