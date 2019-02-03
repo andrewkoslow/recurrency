@@ -14,8 +14,6 @@
 		717E206021FFC1FF000939A4 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205F21FFC1FF000939A4 /* Conversion.swift */; };
 		717E206221FFC461000939A4 /* ConversionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E206121FFC461000939A4 /* ConversionInteractor.swift */; };
 		717E206521FFCBBB000939A4 /* ConversionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E206421FFCBBB000939A4 /* ConversionService.swift */; };
-		717E20672200708D000939A4 /* ConversionViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E20662200708D000939A4 /* ConversionViewControllerProtocol.swift */; };
-		717E20692200710A000939A4 /* ConversionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E20682200710A000939A4 /* ConversionPresenter.swift */; };
 		717E206B22007229000939A4 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E206A22007229000939A4 /* ConversionViewController.swift */; };
 		717E206D220077B1000939A4 /* ConversionViewAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717E206C220077B1000939A4 /* ConversionViewAmountCell.xib */; };
 		717E206F220079CB000939A4 /* ConversionViewAmountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E206E220079CB000939A4 /* ConversionViewAmountCell.swift */; };
@@ -33,8 +31,6 @@
 		717E205F21FFC1FF000939A4 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		717E206121FFC461000939A4 /* ConversionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionInteractor.swift; sourceTree = "<group>"; };
 		717E206421FFCBBB000939A4 /* ConversionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionService.swift; sourceTree = "<group>"; };
-		717E20662200708D000939A4 /* ConversionViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewControllerProtocol.swift; sourceTree = "<group>"; };
-		717E20682200710A000939A4 /* ConversionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionPresenter.swift; sourceTree = "<group>"; };
 		717E206A22007229000939A4 /* ConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewController.swift; sourceTree = "<group>"; };
 		717E206C220077B1000939A4 /* ConversionViewAmountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConversionViewAmountCell.xib; sourceTree = "<group>"; };
 		717E206E220079CB000939A4 /* ConversionViewAmountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionViewAmountCell.swift; sourceTree = "<group>"; };
@@ -94,8 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				717E205821F88FE9000939A4 /* ConversionPresentationProtocol.swift */,
-				717E20682200710A000939A4 /* ConversionPresenter.swift */,
-				717E20662200708D000939A4 /* ConversionViewControllerProtocol.swift */,
 				717E206A22007229000939A4 /* ConversionViewController.swift */,
 				717E206C220077B1000939A4 /* ConversionViewAmountCell.xib */,
 				717E206E220079CB000939A4 /* ConversionViewAmountCell.swift */,
@@ -235,7 +229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				717E20672200708D000939A4 /* ConversionViewControllerProtocol.swift in Sources */,
 				717E20752205DA21000939A4 /* Amount.swift in Sources */,
 				717E206F220079CB000939A4 /* ConversionViewAmountCell.swift in Sources */,
 				717E206521FFCBBB000939A4 /* ConversionService.swift in Sources */,
@@ -243,7 +236,6 @@
 				717E206221FFC461000939A4 /* ConversionInteractor.swift in Sources */,
 				717E207322050C70000939A4 /* RowUpdates.swift in Sources */,
 				717E206021FFC1FF000939A4 /* Conversion.swift in Sources */,
-				717E20692200710A000939A4 /* ConversionPresenter.swift in Sources */,
 				717E206B22007229000939A4 /* ConversionViewController.swift in Sources */,
 				717E205921F88FE9000939A4 /* ConversionPresentationProtocol.swift in Sources */,
 				717E205721F88FBD000939A4 /* ConversionInteractionProtocol.swift in Sources */,
