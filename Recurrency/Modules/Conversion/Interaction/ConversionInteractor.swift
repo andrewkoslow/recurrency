@@ -75,7 +75,7 @@ extension ConversionInteractor {
     
     private func updatePresentation() {
         let amounts = calculateAmounts()
-        let model = ConversionPresentationModel(amounts: amounts)
+        let model = ConversionPresentationModel(base: base?.currency, amounts: amounts)
         
         presentation.update(with: model)
     }

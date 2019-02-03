@@ -10,6 +10,7 @@ import Foundation
 
 struct ConversionPresentationModel {
     
+    let base: Currency?
     let amounts: [Amount]
     
 }
