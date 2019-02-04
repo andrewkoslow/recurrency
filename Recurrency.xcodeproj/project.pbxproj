@@ -15,6 +15,7 @@
 		7156612E22082F0D006FF409 /* ConversionWebServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156612D22082F0D006FF409 /* ConversionWebServiceTests.swift */; };
 		7156613122083144006FF409 /* URL+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156613022083144006FF409 /* URL+JSON.swift */; };
 		7156613922083863006FF409 /* ConversionServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156613822083863006FF409 /* ConversionServiceMock.swift */; };
+		7156613B2208397A006FF409 /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7156613A2208397A006FF409 /* GenericError.swift */; };
 		717E205721F88FBD000939A4 /* ConversionInteractionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205621F88FBD000939A4 /* ConversionInteractionProtocol.swift */; };
 		717E205921F88FE9000939A4 /* ConversionPresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205821F88FE9000939A4 /* ConversionPresentationProtocol.swift */; };
 		717E205E21FFC1C5000939A4 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E205D21FFC1C5000939A4 /* Currency.swift */; };
@@ -54,6 +55,7 @@
 		7156612D22082F0D006FF409 /* ConversionWebServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionWebServiceTests.swift; sourceTree = "<group>"; };
 		7156613022083144006FF409 /* URL+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+JSON.swift"; sourceTree = "<group>"; };
 		7156613822083863006FF409 /* ConversionServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionServiceMock.swift; sourceTree = "<group>"; };
+		7156613A2208397A006FF409 /* GenericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericError.swift; sourceTree = "<group>"; };
 		717E205621F88FBD000939A4 /* ConversionInteractionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionInteractionProtocol.swift; sourceTree = "<group>"; };
 		717E205821F88FE9000939A4 /* ConversionPresentationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionPresentationProtocol.swift; sourceTree = "<group>"; };
 		717E205D21FFC1C5000939A4 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				7156613822083863006FF409 /* ConversionServiceMock.swift */,
+				7156613A2208397A006FF409 /* GenericError.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				715661262207287F006FF409 /* CurrencyTests.swift in Sources */,
 				7156613122083144006FF409 /* URL+JSON.swift in Sources */,
 				7156612822073085006FF409 /* ConversionTests.swift in Sources */,
+				7156613B2208397A006FF409 /* GenericError.swift in Sources */,
 				7156613922083863006FF409 /* ConversionServiceMock.swift in Sources */,
 				7156612E22082F0D006FF409 /* ConversionWebServiceTests.swift in Sources */,
 				7156612C2207B202006FF409 /* ConversionResponseTests.swift in Sources */,
